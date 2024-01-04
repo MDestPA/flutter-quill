@@ -430,7 +430,7 @@ class _TextLineState extends State<TextLine> {
     }
 
     if (isLink && canLaunchLinks) {
-      if (isDesktop() || widget.readOnly) {
+      if (isDesktop() || !widget.readOnly) {
         _linkRecognizers[segment] = TapGestureRecognizer()
           ..onTap = () => _tapNodeLink(segment);
       } else {
